@@ -22,9 +22,10 @@
   "NO_PROVIDER_SPEND": "YES",
   "GITHUB_OUTPUT_BRANCH": "claude/a13-host-operator-deploy-kpfpe3",
   "GITHUB_OUTPUT_REPOSITORY": "ellakeyes/tennis",
-  "GITHUB_OUTPUT_COMMIT": null,
+  "GITHUB_OUTPUT_COMMIT": "8aa7172c3be789be76f2580154a03249bd04e67e",
   "DISPATCH_OUTPUT_BRANCH_NOT_WRITTEN": "agent/claude/supervisor-deploy-a13-20261008 (ellakeyes/tennisauto) \u2014 this session has read-only access to tennisauto and is bound to the branch above; a PM/host relay must mirror or re-point this receipt",
   "EXACT_SAFE_NEXT_ACTION": "Run this same dispatch from a session on the macOS host (launchctl, ~/.config/tennisauto-supervisor, ~/.local/share/tennisauto-supervisor, Codex CLI, host SSH git credential available) with push access to ellakeyes/tennisauto. Pre-audit and identity verification here can be reused; nothing on the host has been changed.",
   "WAITING_PM_A13_TASK": "YES \u2014 no PM-authored bounded harmless A13 task exists in agent_control/TASK_QUEUE.md",
-  "GENERATED_UTC": "2026-10-08T21:07:11Z"
+  "GENERATED_UTC": "2026-10-08T21:07:11Z",
+  "GITHUB_OUTPUT_COMMIT_NOTE": "receipt commit; this field was recorded in a follow-up commit on the same branch"
 }

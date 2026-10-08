@@ -23,7 +23,7 @@ C04_UNTOUCHED = YES
 NO_PROVIDER_SPEND = YES
 GITHUB_OUTPUT_REPOSITORY = ellakeyes/tennis
 GITHUB_OUTPUT_BRANCH = claude/a13-host-operator-deploy-kpfpe3
-GITHUB_OUTPUT_COMMIT = see DEPLOYMENT_RESULT.json (null until pushed; the push commit cannot embed its own SHA)
+GITHUB_OUTPUT_COMMIT = 8aa7172c3be789be76f2580154a03249bd04e67e (receipt commit; recorded by follow-up commit on the same branch)
 DISPATCH_OUTPUT_BRANCH_NOT_WRITTEN = agent/claude/supervisor-deploy-a13-20261008 (ellakeyes/tennisauto)
 
 ## 1. What was done (honest scope)

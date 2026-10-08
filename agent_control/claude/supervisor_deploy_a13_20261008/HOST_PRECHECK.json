@@ -1,0 +1,102 @@
+{
+  "task_id": "TENNIS-CLAUDE-HOST-SUPERVISOR-DEPLOY-A13-20261008",
+  "role": "HOST_OPERATOR",
+  "agent": "CLAUDE",
+  "generated_utc": "2026-10-08T21:07:11Z",
+  "dispatch": "agent_control/chatgpt/CLAUDE_HOST_SUPERVISOR_DEPLOY_A13_DISPATCH_20261008.md",
+  "dispatch_read_at_tennisauto_main": "90916c7f680ab5a475727a630aa9d4e532223ee1",
+  "schema": "HOST_PRECHECK_V1",
+  "candidate": {
+    "branch": "codex/tennisauto-supervisor-hardening-v1",
+    "declared_commit": "4b93bb0ece81e4933b7e1649d9651e4fdd722fb5",
+    "remote_ref_head_observed": "4b93bb0ece81e4933b7e1649d9651e4fdd722fb5",
+    "REMOTE_REF_MATCH": true,
+    "observed_via": "git ls-remote origin (ellakeyes/tennisauto)"
+  },
+  "verifier": {
+    "branch": "agent/claude/supervisor-hardening-verify-20261008",
+    "declared_commit": "1d80923196b06c31dd21d054df89c48d7ab6ae1e",
+    "remote_ref_head_observed": "1d80923196b06c31dd21d054df89c48d7ab6ae1e",
+    "REMOTE_REF_MATCH": true,
+    "result_file": "agent_control/claude/supervisor_hardening_verify_20261008/VERIFICATION_RESULT_4b93bb0.json",
+    "verdict_read": "VERIFIED",
+    "ready_for_live_supervisor_deployment_read": "YES",
+    "failed_gates_read": []
+  },
+  "frozen_contract": {
+    "path": "agent_control/chatgpt/SUPERVISOR_DEPLOYMENT_WINDOW_CONTRACT.md",
+    "commit": "0c46e8b0bfd2568470d9a82ab726b741893bfa94",
+    "commit_exists": true,
+    "read_in_full": true
+  },
+  "a13_contract_read_in_full": "agent_control/chatgpt/AGENT_SYSTEM_ACCEPTANCE_V1.md",
+  "pm_safety_runbook_read_in_full": "agent_control/chatgpt/TENNIS_MONDAY_OPERATIONAL_RUNBOOK_20261008.md",
+  "source_hash_match": {
+    "method": "sha256 of `git show 4b93bb0:agent_control/supervisor/<file>` computed in this session",
+    "computed_sha256": {
+      "agent_runner.py": "7de2ee177778c2291366bce8e45c9e8d978581b2e12216421922c58a6c02fd6b",
+      "github_pr.py": "a760201ce3166462adada337ccaf71f2fb7a7025b1f7dce9c63c293ea6045250",
+      "host_publisher.py": "7662a413d6b757087ad4f1aab28d94e6afcab0f4309af2ab60bc435e90d80c28",
+      "install_launchagent.py": "7fdb55e35ed1925d87e03d895c9ec5863374b3a56f8fdf66a6aca91f50eb9f7a",
+      "launchd_codex_canary.py": "27b072969813307ec1e4973381cc391e855a09e9673564d7da3e75aab0c91460",
+      "local_chain_canary.py": "40ad1eeea02e7934adf42ca87f3872efea01fcf75d7e351867b17d1e355c0fd4",
+      "publisher_canary.py": "50f778a29621fe5e7546a9c29ea77f3c1afb51857467d63aeeea2cea5382761b",
+      "result_contract.py": "8149de178f74fc4d45ff6d2997c559508537caf4b88da4339ed6dbe0d72bfe9b",
+      "supervisor.py": "b17f8088cc67765db35c8ab004bb1e4a7395c5016fd60cadcf2fd10219db1194",
+      "test_supervisor.py": "01cb144328356e09beb8d919994e16ca408a4e51293dfb0db594b90e46ec285e"
+    },
+    "matches_verifier_CANDIDATE_IDENTITY_4b93bb0": true,
+    "matches_candidate_SUPERVISOR_HARDENING_R4_SOURCE_EVIDENCE_SHA256": true,
+    "VERIFIED_EXACT_BYTES_AT_SOURCE_COMMIT": true,
+    "note": "This proves the remote source bytes are the verified bytes. It does NOT prove installation on the host."
+  },
+  "candidate_own_suite_in_container": {
+    "command": "PYTHONPATH=<worktree@4b93bb0> python3 -m unittest agent_control.supervisor.test_supervisor",
+    "ran": 32,
+    "result": "OK",
+    "informational_only": true,
+    "not_deployment_proof": true
+  },
+  "previous_installed_identity": {
+    "status": "UNKNOWN_HOST_NOT_REACHABLE",
+    "tennisauto_main_control_checkout_reference_sha256": {
+      "agent_runner.py": "37a74e4e3bc0124aba79fad98dc32057529a9c410baebb8bc7248e5d68759bba",
+      "github_pr.py": "a760201ce3166462adada337ccaf71f2fb7a7025b1f7dce9c63c293ea6045250",
+      "host_publisher.py": "d0f2bf0ac75fcf8fe7480432c7c58be3774108cee371dabbc6e7b23082bfd7d3",
+      "install_launchagent.py": "7fdb55e35ed1925d87e03d895c9ec5863374b3a56f8fdf66a6aca91f50eb9f7a",
+      "launchd_codex_canary.py": "27b072969813307ec1e4973381cc391e855a09e9673564d7da3e75aab0c91460",
+      "local_chain_canary.py": "1ce5eb06d1a202c26298b6d95fa06755d04dbdd5fe60afeea31e26caec122323",
+      "publisher_canary.py": "60bf2522a7416e238d5fdcc2aa018ebe9d7b8b0c95ca28d5f11c5c6bc9221b17",
+      "result_contract.py": "5ae82b77b85b1c70f4d6436202382747c3745de91c8fb7fca62bbc8cd0d276ea",
+      "supervisor.py": "b2e4cc21c812e900a570c033f9584c559107506cb123e991f95d2b360e0b687f",
+      "test_supervisor.py": "99ddcf23c115ef92e1753e63c22bc6497e38328a74b406ae83af0ba8c51a3b01"
+    },
+    "note": "Hashes at tennisauto main are the control-checkout reference only; the actually installed supervisor identity on the host could not be read."
+  },
+  "host_preflight": {
+    "reachable": false,
+    "platform_observed": "Linux vm 6.18.44-fc-v80 x86_64 (cloud container)",
+    "user": "root",
+    "launchctl": "MISSING",
+    "launch_agent_plist": "ABSENT",
+    "supervisor_config": "ABSENT",
+    "supervisor_runtime_root": "ABSENT",
+    "codex_cli": "MISSING",
+    "claude_cli": "/opt/node22/bin/claude (container copy, not the host binary)",
+    "host_ssh_git_credential": "ABSENT",
+    "supervisor_process": "NONE_OBSERVED",
+    "codex_lane_checkout": "NOT_REACHABLE",
+    "claude_lane_checkout": "NOT_REACHABLE",
+    "gh_token_in_env": "PRESENT_BUT_INVALID_FOR_gh (not used)"
+  },
+  "worker_state_preflight": {
+    "status": "NOT_OBSERVABLE",
+    "reason": "host runtime not reachable; no claim made about live workers"
+  },
+  "STOP_CHECK_RESULT": "BLOCKED_HOST_ACCESS",
+  "blocker": "BLOCKED_HOST_ACCESS: this session executes in an ephemeral Linux cloud container (uname Linux vm 6.18.44, user root, HOME=/root), not on the macOS host. Absent on this machine: launchctl, ~/Library/LaunchAgents/com.ellakeyes.tennisauto-supervisor.plist, ~/.config/tennisauto-supervisor/config.json, ~/.local/share/tennisauto-supervisor (runtime, control checkout, Codex lane, Claude lane, supervisor.jsonl, task_logs), /Applications/ChatGPT.app/Contents/Resources/codex, any host SSH git credential, and any running supervisor/agent_runner process. Steps A-F of the dispatch (stop old supervisor, preserve both lanes, migrate queue, install exact bytes, restart, A13 clean and failure chains) require that host and were NOT executed.",
+  "PRODUCTION_TENNIS_RUNTIME_TOUCHED": "NO",
+  "ORDERS_ENABLED": "NO",
+  "C04_UNTOUCHED": "YES",
+  "NO_PROVIDER_SPEND": "YES"
+}

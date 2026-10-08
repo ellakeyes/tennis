@@ -1,0 +1,62 @@
+{
+  "task_id": "TENNIS-CLAUDE-HOST-SUPERVISOR-DEPLOY-A13-20261008",
+  "role": "HOST_OPERATOR",
+  "agent": "CLAUDE",
+  "generated_utc": "2026-10-08T21:07:11Z",
+  "dispatch": "agent_control/chatgpt/CLAUDE_HOST_SUPERVISOR_DEPLOY_A13_DISPATCH_20261008.md",
+  "dispatch_read_at_tennisauto_main": "90916c7f680ab5a475727a630aa9d4e532223ee1",
+  "schema": "QUEUE_AGENT_MIGRATION_V1",
+  "status": "NOT_RUN",
+  "QUEUE_AGENT_MIGRATION": "NOT_RUN",
+  "reason": "CONTROL_QUEUE_WRITE_EXCEPTION applies only when the old supervisor is stopped and both preservations are complete; neither was possible from this session. agent_control/TASK_QUEUE.md was NOT modified.",
+  "queue_observed": {
+    "repo": "ellakeyes/tennisauto",
+    "commit": "90916c7f680ab5a475727a630aa9d4e532223ee1",
+    "path": "agent_control/TASK_QUEUE.md",
+    "sha256_before": "4f825e8b43b53bc425c658a5048c4971017eaad47dc4f7d3def89b93a1467532",
+    "sha256_after": "4f825e8b43b53bc425c658a5048c4971017eaad47dc4f7d3def89b93a1467532",
+    "diff": "none (no mutation)"
+  },
+  "readonly_preaudit_with_candidate_parser": {
+    "parser": "parse_ready_tasks_with_errors from agent_control/supervisor/supervisor.py at 4b93bb0ece81e4933b7e1649d9651e4fdd722fb5",
+    "script": "agent_control/claude/supervisor_deploy_a13_20261008/queue_parse_audit_readonly.py",
+    "dispatchable_sections_found": 3,
+    "parsed_ok": 0,
+    "parse_errors": 3,
+    "sections": [
+      {
+        "task_id": "TENNIS-CLAUDE-STATUS-006",
+        "activation_mode": "READY",
+        "queue_line": 113,
+        "section_hash": "452723087095fe5349ef7fc2e593fff562d6cc854f28ac7419e308f3872fdce0",
+        "current_blocker": "MISSING_AGENT",
+        "required_migration": "add `AGENT: CLAUDE`"
+      },
+      {
+        "task_id": "TENNIS-CODEX-STAGE01-R2-ACK-REPAIR-001",
+        "activation_mode": "READY",
+        "queue_line": 183,
+        "section_hash": "f62c0ed4c614f965ed687cb616d29578f8a39cd3ccc4a9bb03dfdc29b5b62bd4",
+        "current_blocker": "MISSING_AGENT",
+        "required_migration": "add `AGENT: CODEX`"
+      },
+      {
+        "task_id": "TENNIS-CODEX-STAGE01-R2-ACK-REVERIFY-001",
+        "activation_mode": "AUTO_READY_AFTER=TENNIS-CODEX-STAGE01-R2-ACK-REPAIR-001",
+        "queue_line": 203,
+        "section_hash": "425dbfe003dc19680239ba79c2c830df83f605930ed5934c0178223fd3d736eb",
+        "current_blocker": "MISSING_AGENT",
+        "required_migration": "add `AGENT: CODEX`"
+      }
+    ],
+    "other_headings_non_dispatchable": [
+      "COMPLETE x3",
+      "PAUSED x6 (TENNIS-CLAUDE-LIVENESS-005, TENNIS-CLAUDE-RECOVERY-001, ONEOFF-CODEX-CRYPTO-003, TENNIS-CLAUDE-CHALLENGER-CYCLE-002, TENNIS-CLAUDE-UNIFIED-ORCHESTRATION-003)"
+    ],
+    "stale_accidental_launch_risk_now": "NONE under candidate parser (all three dispatchable sections are TASK_PARSE_BLOCKED:MISSING_AGENT until migrated); the OLD supervisor's behaviour on these sections could not be observed.",
+    "legacy_stage01_hold_note": "Per dispatch step C, TENNIS-CODEX-STAGE01-R2-ACK-REPAIR-001 / -REVERIFY-001 must be held safe (not become A13 canaries) until PM-approved recovery; this decision is for the host window and was not applied."
+  },
+  "migrations_applied": [],
+  "running_sections_mutated": "NONE",
+  "blocker": "BLOCKED_HOST_ACCESS: this session executes in an ephemeral Linux cloud container (uname Linux vm 6.18.44, user root, HOME=/root), not on the macOS host. Absent on this machine: launchctl, ~/Library/LaunchAgents/com.ellakeyes.tennisauto-supervisor.plist, ~/.config/tennisauto-supervisor/config.json, ~/.local/share/tennisauto-supervisor (runtime, control checkout, Codex lane, Claude lane, supervisor.jsonl, task_logs), /Applications/ChatGPT.app/Contents/Resources/codex, any host SSH git credential, and any running supervisor/agent_runner process. Steps A-F of the dispatch (stop old supervisor, preserve both lanes, migrate queue, install exact bytes, restart, A13 clean and failure chains) require that host and were NOT executed."
+}

@@ -1,0 +1,21 @@
+{
+  "task_id": "TENNIS-CLAUDE-HOST-SUPERVISOR-DEPLOY-A13-20261008",
+  "role": "HOST_OPERATOR",
+  "agent": "CLAUDE",
+  "generated_utc": "2026-10-08T21:07:11Z",
+  "dispatch": "agent_control/chatgpt/CLAUDE_HOST_SUPERVISOR_DEPLOY_A13_DISPATCH_20261008.md",
+  "dispatch_read_at_tennisauto_main": "90916c7f680ab5a475727a630aa9d4e532223ee1",
+  "schema": "LANE_PRESERVATION_RECEIPT_V1",
+  "lane": "CODEX",
+  "status": "NOT_RUN",
+  "reason": "Host lane checkout not reachable from this session; no preservation copy/move was performed and no lane was touched.",
+  "original_path": null,
+  "preserved_path": null,
+  "source_head": null,
+  "git_status": null,
+  "dirty_or_untracked_files": null,
+  "sha256_per_file": null,
+  "preserved_bytes_accessible": null,
+  "blocker": "BLOCKED_HOST_ACCESS: this session executes in an ephemeral Linux cloud container (uname Linux vm 6.18.44, user root, HOME=/root), not on the macOS host. Absent on this machine: launchctl, ~/Library/LaunchAgents/com.ellakeyes.tennisauto-supervisor.plist, ~/.config/tennisauto-supervisor/config.json, ~/.local/share/tennisauto-supervisor (runtime, control checkout, Codex lane, Claude lane, supervisor.jsonl, task_logs), /Applications/ChatGPT.app/Contents/Resources/codex, any host SSH git credential, and any running supervisor/agent_runner process. Steps A-F of the dispatch (stop old supervisor, preserve both lanes, migrate queue, install exact bytes, restart, A13 clean and failure chains) require that host and were NOT executed.",
+  "destructive_actions_taken": "NONE"
+}
